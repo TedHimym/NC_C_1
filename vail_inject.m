@@ -2,6 +2,7 @@ clear; clc;
 
 load('inject_data.mat')
 load('v_data.mat')
+load('steady_time.mat')
 
 % hold on
 % for indexd = 1: length(intr_L)
@@ -19,6 +20,6 @@ for indexd = 1:length(intr_L)
     L = intr_L{indexd};
 %     plot(U(indexd).*(R(indexd)+theta(indexd).*0.5).*theta(indexd).*time.^3, (R(indexd)+L).*(L.^3)./(g(indexd)*0.0016*7), '-*')
     uin_d_1 = (R(indexd)+L).*(L.^3)./(U(indexd).*theta(indexd).*(g(indexd)*0.0016*7).*(R(indexd)+theta(indexd).*0.15));
-##    plot(time, power(uin_d_1, 1/3), '-*')
-    plot(time.^3, uin_d_1, '-*')
+    plot(time./steady_time(indexd), power(uin_d_1, 1/3)./steady_time(indexd), '.')
+%     plot((time./steady_time).^3, uin_d_1, '-*')
 end
