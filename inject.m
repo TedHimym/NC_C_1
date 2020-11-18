@@ -30,7 +30,7 @@ end
 
 hold on
 for indexd = 1: length(intr_L)
-    plot(time_C{indexd}, intr_L{indexd}, '-*')
+    plot(time_C{indexd}, intr_L{indexd}, '-.')
 end
 
 % for file_ind = 1: length(VFile)

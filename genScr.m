@@ -5,6 +5,7 @@ function genScr(R, L)
   
   scrp = fopen(ScrName, 'w');
   
+  
   R = 0.01; L = 10;
   np = [
   0, 0.0, R  ;
